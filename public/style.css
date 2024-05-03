@@ -1,0 +1,123 @@
+#bd {
+  background: #00000047;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  padding: 0 12rem;
+  background-color: rgb(255 255 255 / 20%);
+}
+.header-contact {
+  display: flex;
+  justify-content: space-between;
+  gap: 11rem;
+  align-items: center;
+  border-bottom: 1px solid #cdcdcd69;
+}
+
+.header-contact > :nth-child(1) {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.header-contact > :nth-child(1) p {
+  padding: 1rem 1rem 1rem 0;
+  border-right: 1px solid #cdcdcd69;
+}
+
+.header-contact > :nth-child(2) {
+  display: flex;
+  gap: 10px;
+  flex: 40%;
+  justify-content: space-between;
+  div:nth-child(1) {
+    display: flex;
+    color: white;
+    gap: 10px;
+    align-items: center;
+    border-right: 1px solid #cdcdcd69;
+  }
+}
+.navbar {
+  padding: 0;
+}
+.socials-cont a {
+  font-size: 1.5rem;
+  color: white;
+  align-items: center;
+}
+.nav-links-cont a:hover {
+  border-bottom: 2px solid white;
+}
+.nav-links-cont a {
+  transition: 0.3s;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 2rem 0;
+  border-bottom: 2px solid #ffffff00;
+}
+.header p {
+  font-family: "Lato", Sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6em;
+  margin: 0;
+  color: white;
+}
+.socials-cont {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  border-left: 1px solid #cdcdcd69;
+  padding-left: 1rem;
+}
+.header-contact > :nth-child(2) > div:nth-child(1) {
+  padding: 1rem 1rem 1rem 0;
+}
+.logo-cont img {
+  max-width: 160px;
+}
+.certificate-issue {
+  font-family: "Lato", Sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-style: normal;
+  text-decoration: none;
+  line-height: 1.1em;
+  letter-spacing: 2px;
+  fill: #ffffff;
+  background-color: rgba(255, 255, 255, 0);
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: #ffffff;
+  padding: 1rem 3rem;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+.certificate-issue:hover {
+  color: #ffffff;
+  background-color: #89e3ff;
+  border-color: #89e3ff;
+}
+.nav-links-cont {
+  display: flex;
+  gap: 2rem;
+}
+.back-img {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  mix-blend-mode: multiply;
+}
+@media screen and (max-width: 1440px) {
+  .header {
+    padding: 0 2rem;
+  }
+}
