@@ -1,56 +1,63 @@
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom"; // Import Link from React Router
 
 export default function Header() {
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 100) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="header">
-      <div className="header-contact">
-        <div>
-          <p>Location:Lideta, Addis Ababa</p>
-          <p>Email:emsa@gmail.com</p>
-        </div>
-        <div>
-          <div>
-            <i class="fa-solid fa-phone"></i>
-            <p>+251965555075</p>
-          </div>
+    <div className={`header navigation ${isSticky ? "sticky" : ""}`}>
+      <img src="logo_black.png" alt="" />
+      <input type="checkbox" className="navigation-checkbox" id="navi-toggle" />
 
-          <div className="socials-cont">
-            <Link
-              to={
-                "https://www.linkedin.com/company/ethiopian-medical-students-association-emsa-ethiopia/"
-              }
-            >
-              <i class="fa-brands fa-linkedin"></i>
-            </Link>
-            <Link to={"https://t.me/EMSA_ETHIOPIA"}>
-              <i class="fa-brands fa-telegram"></i>
-            </Link>
-            <Link
-              to={"https://www.facebook.com/profile.php?id=100087182547473"}
-            >
-              <i class="fa-brands fa-facebook"></i>
-            </Link>
-            <Link to={"https://twitter.com/official_EMSA"}>
-              <i class="fa-brands fa-twitter"></i>
-            </Link>
-          </div>
+      <label htmlFor="navi-toggle" className="navigation-button">
+        <span className="menu-line"></span>
+        <span className="menu-line"></span>
+        <span className="menu-line"></span>
+      </label>
+      <div className="navigation-background"></div>
+      <nav className="navigation-nav">
+        <div className="navigation-list">
+          <Link to="/" className="navigation-link">
+            Home
+          </Link>
+          <Link to="/about" className="navigation-link">
+            About Us
+          </Link>
+          <Link to="/projects" className="navigation-link">
+            Running Projects
+          </Link>
+          <Link to="/committees" className="navigation-link">
+            Standing Committees
+          </Link>
+          <Link to="/chapters" className="navigation-link">
+            Local Chapters
+          </Link>
+          <Link to="/news" className="navigation-link">
+            News & Announcements
+          </Link>
+          <Link to="/join" className="navigation-link">
+            Join Us
+          </Link>
         </div>
-      </div>
-      <div className="navbar">
-        <div className="logo-cont">
-          <img src="logo.png" alt="" />
-        </div>
-
-        <div className="nav-links-cont">
-          <Link>Home</Link>
-          <Link>About Us</Link>
-          <Link>Running projects</Link>
-          <Link>Committees</Link>
-          <Link>Certificate</Link>
-          <Link>Join us</Link>
-        </div>
-        <button className="certificate-issue">Get Certificate</button>
-      </div>
+      </nav>
     </div>
   );
 }
