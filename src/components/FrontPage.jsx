@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
-import React, { useRef, useState, useEffect } from "react";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHandshake } from "@fortawesome/free-solid-svg-icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -12,26 +12,35 @@ import "swiper/css/pagination";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 
 export default function FrontPage() {
-
   return (
     <div className="front-page">
       <div className="front-descr-cont">
-        <img className="cross-fill" src="cross_blue_fill.svg" alt="" />
+        <img
+          data-aos-once="true"
+          data-aos="fade-fade"
+          className="cross-fill"
+          src="cross_blue_fill.svg"
+          alt=""
+        />
         <div className="moto-descr-cont">
-          <h1>
+          <h1 data-aos-once="true" data-aos="fade-up" data-aos-duration="800">
             <span>Empowering</span> Future Healthcare Leaders
           </h1>
-          <p>
+          <p data-aos-once="true" data-aos="fade-up" data-aos-duration="1200">
             We are a non-governmental organization dedicated to empowering
             Ethiopian medical students to advance healthcare delivery in
             Ethiopia.
           </p>
         </div>
         <div className="front-btn-cont">
-          <Link>
+          <Link
+            data-aos-once="true"
+            data-aos="fade-up"
+            data-aos-duration="1600"
+          >
             <Button
               variant="contained"
-              endIcon={<i class="fa-regular fa-handshake"></i>}
+              endIcon={<FontAwesomeIcon icon={faHandshake} />}
               sx={{
                 fontSize: "1.2rem",
                 padding: "1rem 0",
@@ -41,7 +50,12 @@ export default function FrontPage() {
               Join Us
             </Button>
           </Link>
-          <Link className="front-certificate-btn">
+          <Link
+            data-aos-once="true"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            className="front-certificate-btn"
+          >
             <p>Get Students Certificate</p>
             <i class="fa-solid fa-angle-right"></i>
           </Link>
@@ -49,11 +63,21 @@ export default function FrontPage() {
       </div>
 
       <div className="front-img-cont">
-        <img className="rec-shape" src="rectangle.svg" alt="" />
-        <img className="cross-stroke1" src="cross_blue_stroke.svg" alt="" />
-        <img className="cross-stroke2" src="cross_blue_stroke.svg" alt="" />
+        <img
+          data-aos-once="true"
+          data-aos="fade-fade"
+          data-aos-duration="1600"
+          className="rec-shape"
+          src="rectangle.svg"
+          alt=""
+        />
         <img className="rectangle" src="rectangle.svg" alt="" />
-        <div class="ripple-circles-cont">
+        <div
+          data-aos-once="true"
+          data-aos="fade-up"
+          data-aos-duration="1600"
+          class="ripple-circles-cont"
+        >
           <div class="circle1">
             <Swiper
               spaceBetween={30}
@@ -68,16 +92,16 @@ export default function FrontPage() {
               className="mySwiper"
             >
               <SwiperSlide>
-                <img src="front-img.png" />
+                <img src="front-img.png" alt="" />
               </SwiperSlide>
               <SwiperSlide>
-                <img src="front-img3.png" />
+                <img src="front-img3.png" alt="" />
               </SwiperSlide>
               <SwiperSlide>
-                <img src="front-img4.png" />
+                <img src="front-img4.png" alt="" />
               </SwiperSlide>
               <SwiperSlide>
-                <img src="front-img5.png" />
+                <img src="front-img5.png" alt="" />
               </SwiperSlide>
             </Swiper>
           </div>
