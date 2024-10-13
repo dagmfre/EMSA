@@ -1,5 +1,6 @@
 import Header from "../Header";
 import Footer from "../Footer";
+import ScTeam from "./ScTeam";
 
 export default function Scoph() {
   return (
@@ -8,14 +9,17 @@ export default function Scoph() {
       <div className="the-committee-front">
         <img src="/research1.svg" alt="" />
         <img src="/scoph-background2.svg" alt="" />
-        <img src="/SCORE5.png" alt="" />
+        <img src="/SCOPH.png" alt="" />
         <h1>Public Health (SCOPH)</h1>
         <p>
-          The Standing Committee on Public Health (SCOPH) brings together
-          medical students from all over the world to learn, build skills,
-          cooperate, explore and share ideas when it comes to addressing all
-          issues related to public health, including global health issues,
-          health policies, health promotion and education, activities.
+          The Standing Committee on Public Health (SCOPH) is one of the six
+          standing committees of EMSA. The committee aims to allow medical
+          students learn, build skills, cooperate, explore, and share ideas when
+          it comes to addressing issues related to public health. SCOPH is
+          responsible for disease prevention within our society, health
+          promotion and education in our community as well as raising awareness
+          about global public health issues within medical students and our
+          society.
         </p>
       </div>
       <div className="committee-history">
@@ -56,7 +60,7 @@ export default function Scoph() {
           <div>
             <img src="/goal2.png" alt="" />
             <h4>
-              Our <span>Mission & Vision</span>
+              Our <span>Vision & Objectives</span>
             </h4>
           </div>
           <p>
@@ -90,7 +94,7 @@ export default function Scoph() {
             </div>
           </div>
           <div className="objectives">
-            <img src="/scoph-icon3.svg" alt="" />{" "}
+            <img src="/scorp-icon3.svg" alt="" />{" "}
             <div>
               <h4>Policy Advocacy</h4>
               <p>
@@ -131,6 +135,9 @@ export default function Scoph() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="sc-officials-team-cont">
+        <ScTeam standingCommittee={"SCOPH"} />
       </div>
       <Footer />
     </div>
