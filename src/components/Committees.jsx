@@ -41,7 +41,7 @@ export default function Committees() {
           </Button>
         </div>
         <div>
-          <img src="committee.png" alt="" />
+          <img src="/committee.png" alt="" />
         </div>
       </div>
       <div className="committee-about">
@@ -104,7 +104,7 @@ export default function Committees() {
         <h2>The Standing Committees</h2>
         <div className="committees-list">
           <div>
-            <img src="SCORE1.png" alt="" />
+            <img src="/SCORE.png" alt="" />
             <h3>Research Exchanges (SCORE)</h3>{" "}
             <p>
               The Standing Committee on Research Exchange (SCORE) mission is to
@@ -135,7 +135,7 @@ export default function Committees() {
             </Link>
           </div>
           <div>
-            <img src="SCORE2.png" alt="" />
+            <img src="/SCOPE.png" alt="" />
             <h3>Professional Exchanges (SCOPE)</h3>{" "}
             <p>
               The Professional Exchange program is a full educational program
@@ -166,7 +166,7 @@ export default function Committees() {
             </Link>
           </div>
           <div>
-            <img src="SCORE3.png" alt="" />
+            <img src="/SCOME.png" alt="" />
             <h3>Medical Education (SCOME)</h3>{" "}
             <p>
               The Standing Committee On Medical Education (SCOME) is a dedicated
@@ -197,7 +197,7 @@ export default function Committees() {
             </Link>
           </div>
           <div>
-            <img src="SCORE4.png" alt="" />
+            <img src="/SCORP.png" alt="" />
             <h3>Human Rights & Peace (SCORP)</h3>{" "}
             <p>
               The Standing Committee on Human Rights and Peace unite students
@@ -231,7 +231,7 @@ export default function Committees() {
             </Link>
           </div>
           <div>
-            <img src="SCORE5.png" alt="" />
+            <img src="/SCOPH.png" alt="" />
             <h3>Public Health (SCOPH)</h3>{" "}
             <p>
               The Standing Committee on Public Health (SCOPH) brings together
@@ -264,7 +264,7 @@ export default function Committees() {
             </Link>
           </div>
           <div>
-            <img src="SCORE6.png" alt="" />
+            <img src="/SCORA.png" alt="" />
             <h3>
               Sexual and Reproductive Health and Rights including HIV and AIDS
               (SCORA)
