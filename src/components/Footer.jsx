@@ -47,11 +47,11 @@ const Footer = () => {
         </p>
         <div className="info-cont">
           <i class="fa-solid fa-square-phone"></i>
-          <p>+251965555075</p>
+          <p>+251989999055</p>
         </div>
         <div className="info-cont">
           <FontAwesomeIcon icon={faEnvelope} />
-          <p>emsa@gmail.com</p>
+          <p>emsa-ethiopia@ifmsa.org</p>
         </div>
 
         <div className="social-cont">
@@ -90,7 +90,7 @@ const Footer = () => {
           style={{ display: isSent ? "flex" : "none" }}
           className="confirm-cont"
         >
-          <img src="check.png" alt="" />
+          <img src="/check.png" alt="" />
           <p>Subscribed succesfully!</p>
         </div>
       </div>
