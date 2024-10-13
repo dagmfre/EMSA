@@ -15,7 +15,6 @@ export default function Header(props) {
     };
 
     window.addEventListener("scroll", handleScroll);
-    // Clean up the event listener
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -28,15 +27,17 @@ export default function Header(props) {
       }`}
     >
       <div>
-        <img
-          rel="Preload"
-          src={`${
-            !isSticky && props.shouldLogoChange
-              ? "/logo.png"
-              : "/logo_black.png"
-          }`}
-          alt=""
-        />
+        <Link to={'/'}>
+          <img
+            rel="Preload"
+            src={`${
+              !isSticky && props.shouldLogoChange
+                ? "/logo.png"
+                : "/logo_black.png"
+            }`}
+            alt=""
+          />
+        </Link>
         <input
           type="checkbox"
           className="navigation-checkbox"
@@ -81,7 +82,7 @@ export default function Header(props) {
             <Link to="/committees" className="navigation-link">
               Standing Committees
             </Link>
-            <Link to="/chapters" className="navigation-link">
+            <Link to="/local-chapters" className="navigation-link">
               Local Chapters
             </Link>
             <Link to="/news" className="navigation-link">
