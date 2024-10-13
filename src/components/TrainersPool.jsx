@@ -236,10 +236,10 @@ export default function TrainersPool() {
           </Button>
         </div>
         <div className="trainers-img">
-          <img src="Trainers.svg" alt="" />
+          <img src="/Trainers.svg" alt="" />
         </div>
       </div>
-      <div className="trainers-pool-cont">
+      <div ref={targetSectionRef} className="trainers-pool-cont">
         <h1>Trainers Pool</h1>
         <div className="trainers-pool">
           <div className="trainer">
@@ -292,7 +292,7 @@ export default function TrainersPool() {
           </div>
           <div className="trainer">
             <div className="trainer-img-cont">
-              <img src="abel.png" alt="" />
+              <img src="/abel.png" alt="" />
               <div
                 onClick={() => handleOpen(contents[3])}
                 className="detail-btn"
@@ -337,7 +337,7 @@ export default function TrainersPool() {
           </div>
           <div className="trainer">
             <div className="trainer-img-cont">
-              <img src="woman-avatar.png" alt="" />
+              <img src="/woman-avatar.png" alt="" />
               <div
                 onClick={() => handleOpen(contents[6])}
                 className="detail-btn"
@@ -350,7 +350,7 @@ export default function TrainersPool() {
           </div>
           <div className="trainer">
             <div className="trainer-img-cont">
-              <img src="sumeya.png" alt="" />
+              <img src="/sumeya.png" alt="" />
               <div
                 onClick={() => handleOpen(contents[7])}
                 className="detail-btn"
@@ -432,7 +432,7 @@ export default function TrainersPool() {
           </div>
           <div className="trainer">
             <div className="trainer-img-cont">
-              <img src="fikir.png" alt="" />
+              <img src="/fikir.png" alt="" />
               <div
                 onClick={() => handleOpen(contents[12])}
                 className="detail-btn"
@@ -535,6 +535,7 @@ Backdrop.propTypes = {
 
 const Modal = styled(BaseModal)`
   position: fixed;
+  margin: 100%;
   z-index: 1300;
   inset: 0;
   display: flex;
