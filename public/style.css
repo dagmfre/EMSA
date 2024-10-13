@@ -34,10 +34,18 @@ html {
   }
 }
 
-.our-story-cont .navigation {
+.our-story-cont .navigation,
+.local-chapters .navigation {
   margin: 0 -5rem !important;
   div {
     max-width: 1150px;
+  }
+}
+
+.local-chapters .navigation {
+  div {
+    margin: 0;
+    max-width: inherit;
   }
 }
 
@@ -175,18 +183,17 @@ html {
   visibility: visible;
   .navigation-list {
     scale: 1;
-    top: 49%;
-    right: 0%;
+    top: 50%;
   }
 }
 
 .navigation-background {
-  height: 60px;
-  width: 60px;
+  height: 70px;
+  width: 70px;
   border-radius: 50%;
   position: fixed;
-  top: 2.5%;
-  right: 9%;
+  right: -15%;
+  top: -15%;
   background: radial-gradient(rgba(41, 152, 255), rgba(86, 67, 250));
   z-index: 1000;
 
@@ -256,23 +263,8 @@ html {
     background-position: center;
     overflow: hidden;
     img {
-      width: 100%;
+      width: 130%;
       align-self: center;
-    }
-  }
-
-  .swiper-slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    &:nth-child(1) img {
-      width: 173%;
-    }
-    &:nth-child(3) img {
-      width: 132%;
-    }
-    &:nth-child(4) img {
-      width: 90%;
     }
   }
 
@@ -381,7 +373,7 @@ html {
 
 .moto-descr-cont p {
   margin: 2rem 0 3rem;
-  font-size: 1.2vw;
+  font-size: 1.1rem;
 }
 
 .about-btn > * {
@@ -630,10 +622,9 @@ html {
 }
 
 .team {
-  margin: 0 -5rem;
   width: initial;
   max-width: initial;
-  padding: 5rem 5rem 10rem;
+  padding: 5rem 2rem 10rem;
   background-image: url(grid_background.svg);
   div {
     max-width: 1280px;
@@ -767,10 +758,22 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
 }
 
-.trainers-pool-link h2 {
+.trainers-pool-link,
+.news-form-external-link {
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  display: flex;
+}
+
+.news-form-external-link h2 {
+  margin: 0 !important;
+}
+
+.trainers-pool-link h2,
+.news-form-external-link h2 {
   position: relative;
   margin: 0;
   font-size: 1.5rem;
@@ -781,7 +784,8 @@ html {
   justify-content: center;
 }
 
-.trainers-pool-link h2::before {
+.trainers-pool-link h2::before,
+.news-form-external-link h2::before {
   content: "";
   background-color: #1976d2;
   position: absolute;
@@ -794,7 +798,8 @@ html {
   height: 2px;
 }
 
-.trainers-pool-link svg {
+.trainers-pool-link svg,
+.news-form-external-link svg {
   transition: 0.3s;
   bottom: 0;
   font-size: 1.5rem;
@@ -802,28 +807,40 @@ html {
   cursor: pointer;
 }
 
-.trainers-pool-link div:hover h2::before {
+.trainers-pool-link div:hover h2::before,
+.news-form-external-link a:hover h2::before {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 
-.trainers-pool-link div {
+.trainers-pool-link div,
+.news-form-external-link a {
   margin-top: 5rem;
   display: flex;
   gap: 10px;
+  align-items: flex-end;
+}
+.news-form-external-link a {
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
 }
 
-.trainers-pool-link h2:hover ~ svg {
+.trainers-pool-link h2:hover ~ svg,
+.news-form-external-link h2:hover ~ svg {
   color: #3765aa;
   bottom: 5px;
 }
 
-.trainers-pool-link svg:hover ~ .trainers-pool-link h1::before {
+.trainers-pool-link svg:hover ~ .trainers-pool-link h1::before,
+.news-form-external-link svg:hover ~ .news-form-external-link h1::before {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 
-.trainers-pool-link svg:hover {
+.trainers-pool-link svg:hover,
+.news-form-external-link svg:hover {
   color: #3765aa;
   bottom: 5px;
 }
@@ -873,9 +890,11 @@ html {
 
 .contact-form {
   display: flex;
+  margin: 0;
+  border-radius: 5px;
   flex-direction: column;
   gap: 1rem;
-  padding: 2rem 4rem 0;
+  padding: 0 4rem;
   justify-content: center;
 }
 
@@ -1627,8 +1646,25 @@ html {
 .scoph .the-committee-front {
   background-color: #f47d3b;
 }
+.scope .the-committee-front {
+  background-color: #0181c1;
+}
 .scome .the-committee-front {
   background-color: #100016;
+}
+.scora .the-committee-front {
+  background-color: #bd202a;
+}
+.scorp .the-committee-front {
+  background-color: #5f903f;
+  justify-content: flex-start;
+  img:nth-child(1) {
+    max-width: 550px;
+    bottom: 1rem;
+    position: absolute;
+    margin: 0 5rem;
+    opacity: 0.7;
+  }
 }
 .scome .the-committee-front > :nth-child(2) {
   bottom: 2rem;
@@ -1653,7 +1689,9 @@ html {
   }
 }
 
-.the-committee-front > :nth-child(1) {
+.scoph .the-committee-front > :nth-child(1),
+.scome .the-committee-front > :nth-child(1),
+.score .the-committee-front > :nth-child(1) {
   top: 0;
   position: absolute;
   max-width: 1280px;
@@ -1663,7 +1701,9 @@ html {
 .the-committee-front > *:not(img) {
   z-index: 2;
 }
-.the-committee-front > :nth-child(2) {
+.scoph .the-committee-front > :nth-child(2),
+.scome .the-committee-front > :nth-child(2),
+.score .the-committee-front > :nth-child(2) {
   z-index: 1;
   bottom: 0;
   position: absolute;
@@ -1711,17 +1751,13 @@ html {
     gap: 2rem;
   }
 }
-.scome .committee-objectives > :nth-child(1) {
-  max-width: initial;
-}
-.scome .committee-objectives > :nth-child(2) {
-  display: initial;
-}
 
-.scome .objectives-cont > :nth-child(1) {
+.scome .objectives-cont > :nth-child(1),
+.scora .objectives-cont > :nth-child(1) {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 10px;
 }
 
 .committee-objectives {
@@ -1761,13 +1797,28 @@ html {
 
 .scome .committee-history span,
 .scome .committee-objectives h4 {
-  background: linear-gradient(to top, #100016 17%, transparent 13%);
+  background: #100016;
+  color: white;
 }
-.score span {
-  background: linear-gradient(to top, #2e4a9c 15%, transparent 13%);
+.score .committee-history span,
+.score .committee-objectives span {
+  background: #2e4a9c;
+  color: white;
 }
-.scoph span {
-  background: linear-gradient(to top, #f47d3b 15%, transparent 13%);
+.scora .committee-history span,
+.scora .committee-objectives span {
+  background: #bd202a;
+  color: white;
+}
+.scoph .committee-history span,
+.scoph .committee-objectives span {
+  background: #f47d3b;
+  color: white;
+}
+.scorp .committee-history span,
+.scorp .committee-objectives span {
+  background: #5f903f;
+  color: white;
 }
 
 .score .the-committee-front > :nth-child(2) {
@@ -1787,6 +1838,414 @@ html {
   height: 0px;
   width: 90%;
   border-top: 2px dashed;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+.swiper-slide {
+  &:nth-child(1) img {
+    width: 225%;
+  }
+  &:nth-child(3) img {
+    width: 170%;
+  }
+  &:nth-child(4) img {
+    position: absolute;
+    width: 100%;
+    top: -100px;
+  }
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 18px;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 100%;
+}
+
+.parallax-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 130%;
+  height: 100%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+
+.swiper-slide .title {
+  font-size: 41px;
+  font-weight: 300;
+}
+
+.swiper-slide .subtitle {
+  font-size: 21px;
+}
+
+.swiper-slide .text {
+  font-size: 1.1rem;
+  max-width: 850px;
+  line-height: 1.3;
+  text-align: center;
+}
+.swiper-pagination {
+  background-color: rgb(53, 45, 45);
+}
+
+.committee-achievements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > :nth-child(1) {
+    display: flex;
+    align-items: center;
+    i {
+      font-size: 2rem;
+      margin-right: 1rem;
+    }
+    h1 {
+      background: linear-gradient(to top, #5f903f 15%, transparent 13%);
+      margin: 2rem 0;
+    }
+  }
+}
+
+.sc-officials-team-cont h1 {
+  margin-bottom: 4rem;
+}
+
+.sc-officials-team-cont .profile > :nth-child(1) {
+  margin: 0;
+}
+
+.sc-officials-team-cont .profile > :nth-child(2) {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+}
+
+.home .news {
+  padding: 50px 0;
+  .news-form-external-link a {
+    margin: 0;
+  }
+}
+
+.news {
+  padding: 100px 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    text-align: center;
+  }
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+}
+.home .news-header {
+  justify-content: space-between;
+}
+.news-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.news-cards-cont {
+  display: grid;
+  grid-template: auto / 1fr 1fr 1fr;
+  gap: 1rem;
+  > *:not(.news-form-external-link) {
+    margin-bottom: 2rem;
+    max-height: max-content;
+    border-bottom: #000000 4px solid;
+    border-radius: 8px 8px 10px 10px;
+    overflow: hidden;
+    padding-bottom: 10px;
+  }
+}
+
+.news-body {
+  display: flex;
+  gap: 10px;
+  span {
+    cursor: pointer;
+    color: #0000ffba;
+    font-weight: 600;
+  }
+}
+.fullscreen {
+  z-index: 100000;
+  position: relative;
+}
+
+.container {
+  max-width: 32rem;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.input,
+.textarea,
+.file-input {
+  margin-top: 0.25rem;
+  display: block;
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  padding: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #a3bffa;
+  outline: none;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075),
+    0 0 0 0.2rem rgba(99, 102, 241, 0.3);
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.file-input {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.file-input::file-selector-button {
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  background-color: #ebf4ff;
+  color: #4f46e5;
+  cursor: pointer;
+}
+
+.file-input::file-selector-button:hover {
+  background-color: #c7d2fe;
+}
+
+.error-message {
+  color: #f56565;
+  margin-bottom: 1rem;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: white;
+  background-color: #4f46e5;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #3730a3;
+}
+
+.submit-btn:disabled {
+  background-color: #a3bffa;
+  cursor: not-allowed;
+}
+
+.news-form-cont {
+  display: flex;
+  img {
+    width: 100%;
+    max-width: 575px;
+    background-color: whitesmoke;
+  }
+}
+
+.news-form-group {
+  position: relative;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  border-radius: 4px;
+  margin-top: 1rem;
+  background-color: aliceblue;
+  input {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+}
+
+.uploader-cont {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  img {
+    max-width: 80px;
+    background: transparent;
+  }
+  p {
+    margin: 0;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+}
+
+.local-chapters-hero {
+  margin: 2rem 0 5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  img {
+    max-width: 770px;
+  }
+  h1 {
+    font-weight: 900;
+  }
+}
+
+.emsa-lc-description-cont {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 2rem;
+}
+.emsa-lc-body-cont {
+  gap: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+.emsa-lc-body {
+  max-width: 1300px;
+  img {
+    max-width: 500px;
+    border-radius: 7px;
+    width: 100%;
+    float: left;
+    margin-right: 30px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.emsa-lc-head {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  h2 {
+    margin: 10px 0 5px;
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  img {
+    max-width: 80px;
+  }
+  p {
+    max-width: 750px;
+  }
+}
+.emsa-body-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  p {
+    margin: 0;
+  }
+}
+
+.reverse {
+  img {
+    float: right;
+    margin-left: 30px;
+  }
+}
+
+.all-chapters {
+  display: flex;
+  flex-direction: column;
+}
+
+.lc-chapters-head {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 2rem auto 1rem;
+  h2 {
+    font-size: 1.2rem;
+    color: cadetblue;
+    text-transform: capitalize;
+    margin: 0;
+  }
+}
+
+.lc-chapters-cont {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  max-width: 1300px;
+  margin: auto;
+  gap: 5px;
+}
+
+.lc-chapter p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.scome .committee-achievements,
+.score .committee-achievements {
+  padding: 0 5rem 2rem;
+  position: relative;
+  text-align: center;
+  > :nth-child(1) {
+    flex-direction: column;
+    gap: 5px;
+  }
 }
 
 @media screen and (max-width: 1350px) {
@@ -1838,6 +2297,10 @@ html {
       width: 40vw;
     }
     @media screen and (max-width: 1200px) {
+      .local-chapters-hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
       .committee-front {
         height: initial;
         padding: 6rem 5rem 5rem;
@@ -1852,467 +2315,519 @@ html {
       .committee-front div p {
         font-size: 1.5vw;
       }
-      @media screen and (max-width: 1100px) {
-        .team-img-cont {
-          column-count: 3;
-        }
-        .testim-cont {
-          grid-template-columns: 1fr 1fr;
-        }
-        .main-story-cont h1 {
-          background-size: 50%;
-        }
-        .story-topic-cont {
-          display: grid;
-        }
-        .stats h1 {
-          font-size: 10vw;
-        }
-        .stats h2,
-        .stats i {
-          font-size: 1.2rem;
-        }
-        @media screen and (max-width: 1067px) {
-          .cross-stroke2,
-          .cross-stroke1 {
-            display: initial;
-          }
-          .navigation-background {
-            right: 4%;
-          }
-          .rectangle {
-            display: none;
-          }
-          .navigation {
-            margin-bottom: 0;
-          }
-          .ripple-circles-cont {
-            width: 60%;
-          }
-          .about {
-            gap: 3rem;
-          }
-          .mission-emoji img {
-            max-width: 40px;
-          }
-          .mission-cont {
-            grid-template: auto auto auto / 1fr;
-          }
-          .missions:nth-child(1) {
-            grid-area: 1 / 1;
-          }
-          .missions:nth-child(2) {
-            grid-area: 2 / 1;
-          }
-          .missions:nth-child(3) {
-            grid-area: 3 / 1;
-          }
-          .about-descr-cont h1 {
-            font-size: 2.5rem;
-            text-align: center;
-          }
-          .about-descr-cont h1 {
-            text-align: center;
-          }
-          .about-descr-cont a {
-            margin: auto;
-            max-width: 310px;
-          }
-          .rec-shape {
-            display: initial;
-          }
-          .front-page {
-            flex-direction: column-reverse;
-            justify-content: center;
-            align-items: center;
-            gap: 3rem;
-          }
-          .front-descr-cont {
-            text-align: center;
-            padding-top: 0;
-            max-width: 100%;
-          }
-          .front-img-cont {
-            position: initial;
-            max-width: initial;
-          }
 
-          .cross-fill {
-            top: 100px;
-            left: 50px;
-            max-width: 12%;
+      @media screen and (max-width: 1150px) {
+        .news-cards-cont {
+          column-count: 2;
+        }
+        @media screen and (max-width: 1100px) {
+          .team-img-cont {
+            column-count: 3;
           }
-
-          .cross-stroke1 {
-            width: 9%;
-            right: 12%;
-            top: -9%;
+          .testim-cont {
+            grid-template-columns: 1fr 1fr;
           }
-
-          .cross-stroke2 {
-            width: 17%;
-            left: 0;
+          .main-story-cont h1 {
+            background-size: 50%;
           }
-
-          .front-descr-cont h1 {
-            line-height: 1.3;
-            font-size: 4rem;
+          .story-topic-cont {
+            display: grid;
           }
-          .moto-descr-cont p {
+          .stats h1 {
+            font-size: 10vw;
+          }
+          .stats h2,
+          .stats i {
             font-size: 1.2rem;
           }
-          .front-btn-cont button {
-            padding: 1rem 4rem;
-            font-size: 1.2rem;
-          }
-
-          .front-certificate-btn {
-            font-size: 1.2rem;
-            justify-content: center;
-          }
-
-          .front-btn-cont {
-            justify-content: center;
-          }
-
-          .rec-shape {
-            position: absolute;
-            width: 10%;
-            right: 0;
-            top: 75%;
-            opacity: 0.7;
-          }
-
-          .navigation-checkbox:checked ~ .navigation-nav {
-            .navigation-list {
-              right: -9%;
-              font-size: 1.2rem;
+          @media screen and (max-width: 1067px) {
+            .cross-stroke2,
+            .cross-stroke1 {
+              display: initial;
             }
-          }
-          .navigation-link:link,
-          .navigation-link:visited {
-            font-size: 1.4rem;
-          }
-          @media screen and (max-width: 1160px) {
-            .front-descr-cont h1 {
-              font-size: 3.2rem;
+            .rectangle {
+              display: none;
             }
-            .moto-descr-cont p {
-              font-size: 1rem;
+            .navigation {
+              margin-bottom: 0;
             }
-            .front-btn-cont button {
-              padding: 10px 2rem;
+            .ripple-circles-cont {
+              width: 60%;
             }
-            .front-certificate-btn {
-              font-size: 15px;
+            .about {
+              gap: 3rem;
             }
-            .front-img-cont {
-              position: relative;
+            .mission-emoji img {
+              max-width: 40px;
+            }
+            .mission-cont {
+              grid-template: auto auto auto / 1fr;
+            }
+            .missions:nth-child(1) {
+              grid-area: 1 / 1;
+            }
+            .missions:nth-child(2) {
+              grid-area: 2 / 1;
+            }
+            .missions:nth-child(3) {
+              grid-area: 3 / 1;
+            }
+            .about-descr-cont h1 {
+              font-size: 2.5rem;
+              text-align: center;
+            }
+            .about-descr-cont h1 {
+              text-align: center;
+            }
+            .about-descr-cont a {
+              margin: auto;
+              max-width: 310px;
+            }
+            .rec-shape {
+              display: initial;
             }
             .front-page {
-              gap: 10vw;
+              flex-direction: column-reverse;
+              justify-content: center;
+              align-items: center;
+              gap: 3rem;
+            }
+            .front-descr-cont {
+              text-align: center;
+              padding-top: 0;
+              max-width: 100%;
+            }
+            .front-img-cont {
+              position: initial;
+              max-width: initial;
             }
 
-            @media screen and (max-width: 1058px) {
+            .cross-fill {
+              top: 100px;
+              left: 50px;
+              max-width: 12%;
+            }
+
+            .cross-stroke1 {
+              width: 9%;
+              right: 12%;
+              top: -9%;
+            }
+
+            .cross-stroke2 {
+              width: 17%;
+              left: 0;
+            }
+
+            .front-descr-cont h1 {
+              line-height: 1.3;
+              font-size: 4rem;
+            }
+            .moto-descr-cont p {
+              font-size: 1.2rem;
+            }
+            .front-btn-cont button {
+              padding: 1rem 4rem;
+              font-size: 1.2rem;
+            }
+
+            .front-certificate-btn {
+              font-size: 1.2rem;
+              justify-content: center;
+            }
+
+            .front-btn-cont {
+              justify-content: center;
+            }
+
+            .rec-shape {
+              position: absolute;
+              width: 10%;
+              right: 0;
+              top: 75%;
+              opacity: 0.7;
+            }
+
+            .navigation-checkbox:checked ~ .navigation-nav {
+              .navigation-list {
+                right: -9%;
+                font-size: 1.2rem;
+              }
+            }
+            .navigation-link:link,
+            .navigation-link:visited {
+              font-size: 1.4rem;
+            }
+            @media screen and (max-width: 1160px) {
+              .front-descr-cont h1 {
+                font-size: 3.2rem;
+              }
+              .moto-descr-cont p {
+                font-size: 1rem;
+              }
+              .front-btn-cont button {
+                padding: 10px 2rem;
+              }
+              .front-certificate-btn {
+                font-size: 15px;
+              }
               .front-img-cont {
-                padding-right: 0;
+                position: relative;
               }
-              .footer {
-                grid-template: repeat(2, 1fr) / repeat(2, 1fr);
-                padding-bottom: 4rem;
+              .front-page {
+                gap: 10vw;
               }
-              @media screen and (max-width: 900px) {
-                .team-img-cont {
-                  column-count: 2;
-                }
-                .committee-about {
-                  flex-direction: column;
-                }
-                .committee-front {
-                  flex-direction: column-reverse;
-                  text-align: center;
-                  align-items: center;
-                  gap: 3rem;
-                  div {
-                    h1 {
-                      font-size: 4rem;
-                      margin-bottom: 1rem;
-                    }
-                    p {
-                      font-size: 1rem;
-                    }
-                  }
-                }
 
-                .counter > :nth-child(5) {
-                  flex-basis: 100%;
-                  margin-top: 3rem;
+              @media screen and (max-width: 1058px) {
+                .front-img-cont {
+                  padding-right: 0;
                 }
-                .gmap-cont {
-                  padding: 50rem 0 5rem;
+                .footer {
+                  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+                  padding-bottom: 4rem;
                 }
-                .contact {
-                  flex-direction: column;
-                }
-                .contact-info-cont div h1 {
-                  font-size: 9vw;
-                }
-                .main-story-cont p {
-                  font-size: 1.2rem !important;
-                  margin-bottom: 6vw;
-                }
-                .main-story-cont h1 {
-                  font-size: 9vw;
-                }
-
-                .contact-form form {
-                  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                }
-                @media screen and (max-width: 720px) {
-                  .home .navigation {
-                    margin: 0 -2rem !important;
-                  }
-                  .home .footer {
-                    margin: 15rem -2rem -2rem;
-                  }
-                  .score .navigation,
-                  .committee .navigation,
-                  .trainers .navigation {
-                    margin: 0 0rem !important;
-                  }
-                  .our-story-cont .footer {
-                    margin: 0 -2rem -2rem;
-                    width: inherit;
-                  }
-                  .our-story-cont .navigation {
-                    margin: 0 -2rem !important;
-                  }
-                  .home {
-                    padding: 100px 2rem;
-                  }
-                  .navigation {
-                    margin: 0 -2rem !important;
-                    padding: 0 2rem;
-                  }
-                  .partners {
-                    padding: 5rem 0 10rem;
-                    margin: 0 -2rem;
-                  }
-                  .team {
-                    margin: 0 -2rem;
-                    padding: 5rem 2rem 10rem;
-                  }
-                  .contact {
-                    margin: 0 -2rem;
-                  }
-                  .contact-form {
-                    padding: 2rem 2rem 0;
-                  }
-                  .the-committee-front > :nth-child(1),
-                  .the-committee-front > :nth-child(2) {
-                    margin: 0 2rem;
-                  }
-                  .the-committee-front {
-                    padding: 6rem 2rem;
+                @media screen and (max-width: 900px) {
+                  .team-img-cont {
+                    column-count: 2;
                   }
                   .committee-about {
-                    padding: 5rem 2rem;
-                  }
-                  .committees-cont {
-                    padding: 10rem 2rem;
+                    flex-direction: column;
                   }
                   .committee-front {
-                    padding: 6rem 2rem;
-                    p {
-                      font-size: 1rem;
-                    }
-                    h1 {
-                      font-size: 4rem;
-                      margin-bottom: 1.5rem;
-                    }
-                  }
-                  .story-cont > :nth-child(1),
-                  .story-cont > :nth-child(2) {
-                    grid-column: 1 / 3;
-                  }
-                  .counter {
-                    padding: 7rem 2rem;
-                    margin: 5rem -2rem;
-                  }
-                  .our-story-cont {
-                    padding: 100px 2rem 5rem;
-                  }
-                  .testim-cont {
-                    grid-template-columns: 1fr;
-                  }
-                  .story-cont {
-                    text-align: center;
-                  }
-                  .story-moto {
-                    margin-bottom: 5vw;
-                  }
-
-                  .story-cont p:nth-child(1) {
-                    grid-area: 1 / 1 / 2 / 3;
-                  }
-                  .story-cont p:nth-child(2) {
-                    grid-area: 2 / 1 / 3 / 3;
-                  }
-                  .story-cont img {
-                    grid-area: 3 / 1 / 4 / 3;
-                  }
-                  .story-topic-cont {
-                    grid-area: 4 / 1 / 5 / 3;
-                  }
-                  .our-story img:nth-child(1) {
-                    border-radius: 15px;
-                  }
-                  .cross-stroke2 {
-                    left: -4%;
-                    top: initial;
-                    bottom: 0;
-                    width: 25%;
-                  }
-                  .footer {
-                    grid-template: repeat(4, auto) / repeat(1, 1fr);
+                    flex-direction: column-reverse;
                     text-align: center;
                     align-items: center;
-                    justify-items: center;
-                    gap: 4rem;
-                  }
-                  .footer-childs > *:not(h1) {
-                    align-items: center;
-                    justify-content: center;
-                    font-size: 1.1rem;
-                  }
-                  .partners-logo-cont {
-                    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
-                  }
-                  .mission-topic {
-                    gap: 5vw;
-                  }
-                  .mission img {
-                    width: 30vw;
-                    align-self: center;
-                  }
-                  .ripple-circles-cont {
-                    width: 90%;
-                  }
-
-                  @media screen and (max-width: 623px) {
-                    .team-img-cont {
-                      column-count: 1;
-                    }
-                    .committee-about {
-                      gap: 1rem;
+                    gap: 3rem;
+                    div {
                       h1 {
-                        font-size: 3rem;
+                        font-size: 4rem;
+                        margin-bottom: 1rem;
                       }
-                      div {
-                        flex-direction: column;
-                        gap: 0;
-                        > :nth-child(1) {
-                          margin-bottom: 2rem;
-                        }
-                        > :nth-child(2) {
-                          border-top: 1px solid #00000047;
-                          padding-top: 2rem;
-                        }
+                      p {
+                        font-size: 1rem;
                       }
                     }
-                    .counter {
-                      flex-wrap: wrap;
-                    }
-                    .counter > :nth-child(4) {
-                      display: none;
-                    }
-                    .counter > :nth-child(5) {
-                      flex-basis: 100%;
-                      margin-top: 3rem;
-                    }
-                    .stats h2,
-                    .stats i {
-                      font-size: 1rem;
-                    }
+                  }
 
-                    .loader img {
-                      width: 20%;
+                  .counter > :nth-child(5) {
+                    flex-basis: 100%;
+                    margin-top: 3rem;
+                  }
+                  .gmap-cont {
+                    padding: 50rem 0 5rem;
+                  }
+                  .contact {
+                    flex-direction: column;
+                  }
+                  .contact-info-cont div h1 {
+                    font-size: 9vw;
+                  }
+                  .main-story-cont p {
+                    font-size: 1.2rem !important;
+                    margin-bottom: 6vw;
+                  }
+                  .main-story-cont h1 {
+                    font-size: 9vw;
+                  }
+
+                  .contact-form form {
+                    grid-template-columns: repeat(
+                      auto-fill,
+                      minmax(200px, 1fr)
+                    );
+                  }
+                  @media screen and (max-width: 850px) {
+                    .swiper-slide {
+                      padding: 40px;
                     }
-                    .ethio-med-img {
-                      display: none;
-                    }
-                    .front-btn-cont {
-                      flex-direction: column;
-                    }
-                    .front-btn-cont a {
-                      max-width: 320px;
-                      width: 100%;
-                    }
-                    .front-btn-cont button {
-                      padding: 1rem 0;
-                      width: 100%;
-                    }
-                    .ripple-circles-cont > * {
-                      border-width: 25px !important;
-                    }
-                    .navigation-list {
-                      right: -20vw;
-                    }
-                    @media screen and (max-width: 450px) {
-                      .partners-logo-cont img {
-                        max-width: 30vw;
+                    @media screen and (max-width: 800px) {
+                      .committee-history {
+                        flex-direction: column;
+                        gap: 2rem;
+                        > :nth-child(2) {
+                          flex-direction: column;
+                        }
                       }
-                      .team h1 {
-                        font-size: 3.5rem;
+                      .committee-objectives {
+                        flex-direction: column;
                       }
-                      .committee-front div h1 {
-                        font-size: 3rem;
+                      .committee-objectives::before {
+                        width: 70%;
                       }
-                      @media screen and (max-width: 425px) {
+                      .emsa-lc-body {
+                        text-align: center;
+                        img {
+                          margin: 0 0 20px;
+                        }
+                      }
+                      .news-cards-cont {
+                        column-count: 1;
+                      }
+                      .news-header h1 {
+                        font-size: 2rem !important;
+                      }
+                      @media screen and (max-width: 720px) {
+                        .scome .committee-achievements {
+                          padding: 0 2rem 2rem;
+                        }
+                        .committee-objectives {
+                          padding: 10rem 2rem 5rem;
+                        }
+                        .team {
+                          padding: 5rem 2rem 10rem;
+                        }
+                        .objectives {
+                          flex-direction: column;
+                        }
+                        .home .navigation {
+                          margin: 0 -2rem !important;
+                        }
+                        .home .footer {
+                          margin: 15rem -2rem -2rem;
+                        }
+                        .the-committee .navigation,
+                        .committee .navigation,
+                        .trainers .navigation {
+                          margin: 0 0rem !important;
+                        }
+                        .our-story-cont .footer {
+                          margin: 0 -2rem -2rem;
+                          width: inherit;
+                        }
+                        .our-story-cont .navigation {
+                          margin: 0 -2rem !important;
+                        }
+                        .home {
+                          padding: 100px 2rem;
+                        }
+                        .navigation {
+                          margin: 0 -2rem !important;
+                          padding: 0 2rem;
+                        }
+                        .partners {
+                          padding: 5rem 0 10rem;
+                          margin: 0 -2rem;
+                        }
+                        .contact {
+                          margin: 0 -2rem;
+                        }
+                        .contact-form {
+                          padding: 2rem 2rem 0;
+                        }
+                        .the-committee-front > :nth-child(1),
+                        .the-committee-front > :nth-child(2) {
+                          margin: 0 2rem;
+                        }
                         .the-committee-front {
-                          height: initial;
+                          padding: 6rem 2rem;
                         }
-                        .committees-list {
-                          grid-template-columns: repeat(
-                            auto-fill,
-                            minmax(270px, 1fr)
-                          );
+                        .committee-about {
+                          padding: 5rem 2rem;
                         }
-                        .counter {
-                          gap: 3rem;
+                        .committees-cont {
+                          padding: 10rem 2rem;
                         }
-                        .stats h2,
-                        .stats i {
-                          font-size: 1.4rem;
-                        }
-                        .stats h1 {
-                          font-size: 4rem;
-                        }
-                        .stats {
-                          flex-basis: 100%;
-                          margin-top: 0 !important;
-                        }
-                        .interceptor {
-                          display: none;
-                        }
-                        .footer {
-                          padding: 4rem 1rem;
-                        }
-                        .mission-main h1 {
-                          font-size: 1.4rem;
-                        }
-                        .front-descr-cont h1 {
-                          font-size: 3rem;
-                        }
-                        .navigation-checkbox:checked ~ .navigation-nav {
-                          .navigation-list {
-                            right: -30%;
-                            top: 51%;
+                        .committee-front {
+                          padding: 6rem 2rem;
+                          p {
+                            font-size: 1rem;
+                          }
+                          h1 {
+                            font-size: 4rem;
+                            margin-bottom: 1.5rem;
                           }
                         }
-                        .navigation-link:link,
-                        .navigation-link:visited {
+                        .story-cont > :nth-child(1),
+                        .story-cont > :nth-child(2) {
+                          grid-column: 1 / 3;
+                        }
+                        .counter {
+                          padding: 7rem 2rem;
+                          margin: 5rem -2rem;
+                        }
+                        .our-story-cont {
+                          padding: 100px 2rem 5rem;
+                        }
+                        .testim-cont {
+                          grid-template-columns: 1fr;
+                        }
+                        .story-cont {
+                          text-align: center;
+                        }
+                        .story-moto {
+                          margin-bottom: 5vw;
+                        }
+
+                        .story-cont p:nth-child(1) {
+                          grid-area: 1 / 1 / 2 / 3;
+                        }
+                        .story-cont p:nth-child(2) {
+                          grid-area: 2 / 1 / 3 / 3;
+                        }
+                        .story-cont img {
+                          grid-area: 3 / 1 / 4 / 3;
+                        }
+                        .story-topic-cont {
+                          grid-area: 4 / 1 / 5 / 3;
+                        }
+                        .our-story img:nth-child(1) {
+                          border-radius: 15px;
+                        }
+                        .cross-stroke2 {
+                          left: -4%;
+                          top: initial;
+                          bottom: 0;
+                          width: 25%;
+                        }
+                        .footer {
+                          grid-template: repeat(4, auto) / repeat(1, 1fr);
+                          text-align: center;
+                          align-items: center;
+                          justify-items: center;
+                          gap: 4rem;
+                        }
+                        .footer-childs > *:not(h1) {
+                          align-items: center;
+                          justify-content: center;
                           font-size: 1.1rem;
+                        }
+                        .partners-logo-cont {
+                          grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+                        }
+                        .mission-topic {
+                          gap: 5vw;
+                        }
+                        .mission img {
+                          width: 30vw;
+                          align-self: center;
+                        }
+                        .ripple-circles-cont {
+                          width: 90%;
+                        }
+
+                        @media screen and (max-width: 623px) {
+                          .team-img-cont {
+                            column-count: 1;
+                          }
+                          .committee-about {
+                            gap: 1rem;
+                            h1 {
+                              font-size: 3rem;
+                            }
+                            div {
+                              flex-direction: column;
+                              gap: 0;
+                              > :nth-child(1) {
+                                margin-bottom: 2rem;
+                              }
+                              > :nth-child(2) {
+                                border-top: 1px solid #00000047;
+                                padding-top: 2rem;
+                              }
+                            }
+                          }
+                          .counter {
+                            flex-wrap: wrap;
+                          }
+                          .counter > :nth-child(4) {
+                            display: none;
+                          }
+                          .counter > :nth-child(5) {
+                            flex-basis: 100%;
+                            margin-top: 3rem;
+                          }
+                          .stats h2,
+                          .stats i {
+                            font-size: 1rem;
+                          }
+
+                          .loader img {
+                            width: 20%;
+                          }
+                          .ethio-med-img {
+                            display: none;
+                          }
+                          .front-btn-cont {
+                            flex-direction: column;
+                          }
+                          .front-btn-cont a {
+                            max-width: 320px;
+                            width: 100%;
+                          }
+                          .front-btn-cont button {
+                            padding: 1rem 0;
+                            width: 100%;
+                          }
+                          .ripple-circles-cont > * {
+                            border-width: 25px !important;
+                          }
+                          .navigation-list {
+                            right: -20vw;
+                          }
+                          @media screen and (max-width: 500px) {
+                            .swiper-slide {
+                              padding: 20px;
+                            }
+
+                            @media screen and (max-width: 450px) {
+                              .partners-logo-cont img {
+                                max-width: 30vw;
+                              }
+                              .team h1 {
+                                font-size: 3.5rem;
+                              }
+                              .committee-front div h1 {
+                                font-size: 3rem;
+                              }
+                              @media screen and (max-width: 425px) {
+                                .the-committee-front {
+                                  height: initial;
+                                }
+                                .committees-list {
+                                  grid-template-columns: repeat(
+                                    auto-fill,
+                                    minmax(270px, 1fr)
+                                  );
+                                }
+                                .counter {
+                                  gap: 3rem;
+                                }
+                                .stats h2,
+                                .stats i {
+                                  font-size: 1.4rem;
+                                }
+                                .stats h1 {
+                                  font-size: 4rem;
+                                }
+                                .stats {
+                                  flex-basis: 100%;
+                                  margin-top: 0 !important;
+                                }
+                                .interceptor {
+                                  display: none;
+                                }
+                                .footer {
+                                  padding: 4rem 1rem;
+                                }
+                                .mission-main h1 {
+                                  font-size: 1.4rem;
+                                }
+                                .front-descr-cont h1 {
+                                  font-size: 3rem;
+                                }
+                                .navigation-checkbox:checked ~ .navigation-nav {
+                                  .navigation-list {
+                                    right: -30%;
+                                    top: 51%;
+                                  }
+                                }
+                                .navigation-link:link,
+                                .navigation-link:visited {
+                                  font-size: 1.1rem;
+                                }
+                              }
+                            }
+                          }
                         }
                       }
                     }
