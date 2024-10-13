@@ -6,7 +6,7 @@ export default function About() {
   return (
     <div className="about">
       <div data-aos-once="true" data-aos="fade-left" data-aos-duration="1500" className="about-img-cont">
-        <img src="about-collage.png" alt="" />
+        <img src="/about-collage.png" alt="" />
       </div>
       <div className="about-descr-cont">
         <h1 data-aos-once="true" data-aos="fade-up" data-aos-duration="500">
