@@ -51,6 +51,7 @@ export default function FrontPage() {
             </Button>
           </Link>
           <Link
+            to={"/certificate-form"}
             data-aos-once="true"
             data-aos="fade-up"
             data-aos-duration="2000"
@@ -85,23 +86,23 @@ export default function FrontPage() {
               navigation={false}
               pagination={false}
               autoplay={{
-                delay: 4000,
+                delay: 100000000,
                 disableOnInteraction: false,
               }}
               modules={[EffectFade, Autoplay, Pagination, Navigation]}
               className="mySwiper"
             >
               <SwiperSlide>
-                <img src="front-img.png" alt="" />
+                <img src="/front-img.png" alt="" />
               </SwiperSlide>
               <SwiperSlide>
-                <img src="front-img3.png" alt="" />
+                <img src="/front-img3.png" alt="" />
               </SwiperSlide>
               <SwiperSlide>
-                <img src="front-img4.png" alt="" />
+                <img src="/front-img4.png" alt="" />
               </SwiperSlide>
               <SwiperSlide>
-                <img src="front-img5.png" alt="" />
+                <img src="/front-img5.png" alt="" />
               </SwiperSlide>
             </Swiper>
           </div>
