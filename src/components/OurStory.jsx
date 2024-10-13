@@ -19,7 +19,6 @@ export default function OurStory() {
 
     window.addEventListener("scroll", handleScroll);
 
-    // Clean up the event listener
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -30,7 +29,7 @@ export default function OurStory() {
       <Header shouldLogoChange={false} isSticky={isSticky} />
       <div className="our-story">
         <div className="our-story-front">
-          <img src="story-img-larger.png" alt="" />
+          <img src="/story-img-larger.png" alt="" />
         </div>
         <div className="main-story-cont">
           <h1>Our Story</h1>
@@ -68,7 +67,7 @@ export default function OurStory() {
               </p>
             </div>
 
-            <img src="ab7.png" alt="" />
+            <img src="/ab7.png" alt="" />
             <div className="story-topic-cont">
               <div className="story-topic">
                 <div>
@@ -91,7 +90,7 @@ export default function OurStory() {
               </div>
               <div className="story-topic">
                 <div>
-                  <img src="leader.svg" alt="" />
+                  <img src="/leader.svg" alt="" />
                   <h3>Leadership</h3>
                 </div>
                 <p>
