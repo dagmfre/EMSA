@@ -1,0 +1,113 @@
+const teamData = {
+  SCORP: [
+    {
+      name: "Anteneh Girma",
+      title: "General Assistant",
+      phone: "+251984955544",
+      email: "antenehgirma444@gmail.com",
+      imgSrc: "/scorp-official1.png",
+    },
+    {
+      name: "Feven Birhanu",
+      title: "General Assistant",
+      phone: "0938752610",
+      email: "pheobeberhanu@gmail.com",
+      imgSrc: "/scorp-official6.png",
+    },
+    {
+      name: "Fikir Belete",
+      title: "General Assistant",
+      phone: "+251989964541",
+      email: "gfikirbelete@gmail.com",
+      imgSrc: "/scorp-official4.png",
+    },
+    {
+      name: "Jochebed Kinfemichael",
+      title: "Activity Coordinator for people with disabilities",
+      phone: "+251 96 204 6517",
+      email: "jokikgn@gmail.com",
+      imgSrc: "/scorp-official3.png",
+    },
+    {
+      name: "Maramawit Belachew",
+      title: "Activity Coordinator for People for People with Disabilities",
+      phone: "+251949187419",
+      email: "ethma21@gmail.com",
+      imgSrc: "/scorp-official7.png",
+    },
+    {
+      name: "Ibtisam Ramadan",
+      title: "Activity Coordinator for GBV and Women's Right",
+      phone: "+251906631854",
+      email: "ibtisamramadan48@gmail.com",
+      imgSrc: "/scorp-official2.png",
+    },
+    {
+      name: "Dlyana Kedir",
+      title: "PRC",
+      phone: "+251967942483",
+      email: "dlaynakedir91@gmail.com",
+      imgSrc: "/scorp-official8.png",
+    },
+  ],
+  SCOPH: [
+    {
+      name: "Mintesnot Meskele",
+      title: "National Officer for Public Health",
+      phone: "+251942213298",
+      email: "mintesnot.meskele@gmail.com",
+      imgSrc: "/scoph-official1.png",
+    },
+    {
+      name: "AMANUEL TADESSE",
+      title: "General Assistant for Administration",
+      phone: "+251911747604",
+      email: "amanitadeabi@gmail.com",
+      imgSrc: "/scoph-official2.png",
+    },
+    {
+      name: "HURIYUMA ABDULJELIL",
+      title: "Capacity Building Development Assistant",
+      phone: "+251920032647",
+      email: "abdulhummi@gmail.com",
+      imgSrc: "/scoph-official3.png",
+    },
+    {
+      name: "FISSEHA MULUGETA",
+      title: "Members Engagement Development Assistant",
+      phone: "+251973388897",
+      email: "fishmulugeta@gmail.com",
+      imgSrc: "/scoph-official4.png",
+    },
+    {
+      name: "EBAWAK GUDETA",
+      title: "Capacity Building Development Assistant",
+      phone: "+251943829117",
+      email: "ebawakguden@gmail.com",
+      imgSrc: "/scoph-official5.png",
+    },
+    {
+      name: "IMAN KEDIR",
+      title: "General Assistant for Exchange",
+      phone: "+251940073378",
+      email: "Imankedir.4@gmail.com",
+      imgSrc: "/scoph-official6.png",
+    },
+    {
+      name: "LEUL MEKONNEN",
+      title: "Public Relations and Communication Development Assistant",
+      phone: "+2519610977088",
+      email: "Leulmekonen321@gmail.com",
+      imgSrc: "/scoph-official7.png",
+    },
+    {
+      name: "NATNAEL WORKU",
+      title: "Public Relations and Communication Development Assistant",
+      phone: "+251938957575",
+      email: "Natnaelworku777@gmial.com",
+      imgSrc: "/scoph-official8.png",
+    },
+  ],
+};
+
+export default teamData;
