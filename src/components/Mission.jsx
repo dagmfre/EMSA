@@ -22,7 +22,7 @@ export default function Mission() {
       <div className="mission-cont">
         <div className="missions">
           <div className="mission-emoji">
-            <img src="empower2.png" alt="" />
+            <img src="/empower2.png" alt="" />
           </div>
           <div className="mission-main">
             <h1 data-aos-once="true" data-aos="fade-left" data-aos-duration="800">
@@ -56,7 +56,7 @@ export default function Mission() {
         </div>
         <div className="missions">
           <div className="mission-emoji">
-            <img src="connect2.png" alt="" />
+            <img src="/connect2.png" alt="" />
           </div>
           <div className="mission-main">
             <h1 data-aos-once="true" data-aos="fade-left" data-aos-duration="1300">Unity</h1>
