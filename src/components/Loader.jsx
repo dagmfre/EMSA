@@ -1,7 +1,7 @@
 const Loader = () => {
   return (
     <div className="loader">
-      <img src="loader.gif" alt="Loading..." />
+      <img src="/loader.gif" alt="Loading..." />
     </div>
   );
 };
