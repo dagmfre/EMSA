@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom"; // Import Link from React Router
+import Cookies from "js-cookie";
 
 export default function Header(props) {
   const [isSticky, setIsSticky] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const token = Cookies.get("token");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +23,14 @@ export default function Header(props) {
     };
   }, [props.isSticky]);
 
+  useEffect(() => {
+    if (token) {
+      setIsAdmin(true);
+    } else {
+      setIsAdmin(false);
+    }
+  }, [token]);
+
   return (
     <div
       className={`header navigation ${
@@ -27,7 +38,7 @@ export default function Header(props) {
       }`}
     >
       <div>
-        <Link to={'/'}>
+        <Link to={"/"}>
           <img
             rel="Preload"
             src={`${
@@ -88,8 +99,16 @@ export default function Header(props) {
             <Link to="/news" className="navigation-link">
               News & Announcements
             </Link>
-            <Link to="/join" className="navigation-link">
-              Join Us
+            {isAdmin && (
+              <Link to="/certificate-form" className="navigation-link">
+                Generate Certificate
+              </Link>
+            )}
+            <Link to="/join-us" className="navigation-link">
+              How to Join Us
+            </Link>
+            <Link to="/login" className="navigation-link">
+              Sign In
             </Link>
           </div>
         </nav>
