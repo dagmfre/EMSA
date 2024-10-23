@@ -535,7 +535,6 @@ Backdrop.propTypes = {
 
 const Modal = styled(BaseModal)`
   position: fixed;
-  margin: 100%;
   z-index: 1300;
   inset: 0;
   display: flex;
