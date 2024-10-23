@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import Button from "@mui/material/Button";
+import CircularProgress from "@mui/material/CircularProgress";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Alert from "@mui/material/Alert";
@@ -16,6 +17,7 @@ export default function Contacts() {
   const [isSent, setIsSent] = useState(false);
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const [loading, setLoading] = useState(false);
   const formRef = useRef();
 
   const handleInputChange = (e) => {
@@ -27,6 +29,7 @@ export default function Contacts() {
     e.preventDefault();
     setSuccessMessage("");
     setError("");
+    setLoading(true);
 
     emailjs
       .sendForm(
@@ -40,6 +43,7 @@ export default function Contacts() {
           console.log(result.text);
           setIsSent(true);
           setSuccessMessage("Your message has been sent successfully!");
+          setLoading(false);
 
           setFormData({
             firstName: "",
@@ -57,6 +61,7 @@ export default function Contacts() {
         (error) => {
           console.error("Failed to send email:", error.text);
           setError("Failed to send your message. Please try again.");
+          setLoading(false);
         }
       );
   };
@@ -153,8 +158,9 @@ export default function Contacts() {
               padding: "1rem 0",
               width: "100%",
             }}
+            disabled={loading}
           >
-            Join Us
+            {loading ? <CircularProgress size={24} /> : "Join Us"}
           </Button>
         </form>
       </div>
