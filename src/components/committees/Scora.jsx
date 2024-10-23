@@ -2,12 +2,36 @@ import Header from "../Header";
 import Footer from "../Footer";
 import Achievements from "./Achivements";
 import ScTeam from "./ScTeam";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 
 export default function Scope() {
   return (
     <div className="the-committee scora">
       <Header shouldLogoChange={true} />
       <div className="the-committee-front">
+        <img
+          style={{
+            top: 0,
+            position: "absolute",
+            maxWidth: "1280px",
+            margin: "0 5rem",
+            opacity: 0.7,
+          }}
+          src="/research1.svg"
+          alt=""
+        />
+        <img
+          style={{
+            zIndex: 1,
+            bottom: 0,
+            position: "absolute",
+            maxWidth: "1430px",
+            margin: "0 5rem",
+            opacity: 0.7,
+          }}
+          src="/scora-background.svg"
+          alt=""
+        />
         <img src="/SCORA.png" alt="" />
         <h1>
           Sexual and Reproductive Health and Rights including HIV and AIDS
@@ -66,7 +90,7 @@ export default function Scope() {
         </div>
         <div className="objectives-cont">
           <div className="objectives">
-            <img src="/scorp-icon1.svg" alt="" />
+            <img src="/sex-icon.svg" alt="" />
             <div>
               <h4>Sexual and Reproductive Health Education</h4>
               <p>
@@ -76,7 +100,7 @@ export default function Scope() {
             </div>
           </div>
           <div className="objectives">
-            <img src="/scorp-icon2.svg" alt="" />
+            <img src="/scorp-icon4.svg" alt="" />
             <div>
               <h4>Policy Advocacy for Sexual and Reproductive Health Rights</h4>
               <p>
@@ -86,7 +110,7 @@ export default function Scope() {
             </div>
           </div>
           <div className="objectives">
-            <img src="/scorp-icon3.svg" alt="" />
+            <img src="/scorp-icon1.svg" alt="" />
             <div>
               <h4>Peer Education Programs</h4>
               <p>
@@ -96,7 +120,7 @@ export default function Scope() {
             </div>
           </div>
           <div className="objectives">
-            <img src="/scorp-icon4.svg" alt="" />
+            <img src="/hiv-icon.svg" alt="" />
             <div>
               <h4>HIV/AIDS Awareness Campaigns</h4>
               <p>
@@ -109,14 +133,25 @@ export default function Scope() {
       </div>
 
       <div className="committee-achievements">
-        <div>
-          <i class="fa-solid fa-trophy"></i>
-          <h1>Recent Achievements</h1>
+        <div style={{ gap: "1rem" }}>
+          <EmojiEventsIcon
+            style={{
+              width: "3.5rem",
+              height: "3.5rem",
+              backgroundColor: "#0000001a",
+              padding: "11px",
+              borderRadius: "50%",
+              border: "1px solid #00000052",
+            }}
+          />
+          <h1 style={{ background: "#bd202a", color: "white" }}>
+            Recent Achievements
+          </h1>
         </div>
         <Achievements standingCommittee={"scora"} />
       </div>
       <div className="sc-officials-team-cont">
-        <ScTeam standingCommittee={"SCORP"} />
+        <ScTeam standingCommittee={"SCORA"} />
       </div>
       <Footer />
     </div>
