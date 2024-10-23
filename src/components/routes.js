@@ -1,20 +1,24 @@
-import Home from "./Home";
-import OurStory from "./OurStory";
-import Committees from "./Committees";
-import TrainersPool from "./TrainersPool";
-import Score from "./committees/Score";
-import Scome from "./committees/Scome";
-import Scoph from "./committees/Scoph";
-import Scope from "./committees/Scope";
-import Scora from "./committees/Scora";
-import Scorp from "./committees/Scorp";
-import Lc from "./Lc";
-import News from "./News";
-import SignUp from "./SignUp";
-import SignIn from "./SignIn";
-import AddNews from "./NewsForm";
-import CertificateForm from "./CertificateForm";
-import CertificateView from "./CertificateView";
+import { lazy } from "react";
+
+const Home = lazy(() => import("./Home"));
+const OurStory = lazy(() => import("./OurStory"));
+const Committees = lazy(() => import("./Committees"));
+const TrainersPool = lazy(() => import("./TrainersPool"));
+const Score = lazy(() => import("./committees/Score"));
+const Scome = lazy(() => import("./committees/Scome"));
+const Scoph = lazy(() => import("./committees/Scoph"));
+const Scope = lazy(() => import("./committees/Scope"));
+const Scora = lazy(() => import("./committees/Scora"));
+const Scorp = lazy(() => import("./committees/Scorp"));
+const Lc = lazy(() => import("./Lc"));
+const News = lazy(() => import("./News"));
+const SignUp = lazy(() => import("./SignUp"));
+const SignIn = lazy(() => import("./SignIn"));
+const AddNews = lazy(() => import("./NewsForm"));
+const CertificateForm = lazy(() => import("./CertificateForm"));
+const CertificateView = lazy(() => import("./CertificateView"));
+const JoinUs = lazy(() => import("./JoinUs"));
+const GetCertificatesForm = lazy(() => import("./GetCertificatesForm"));
 
 const routes = [
   { path: '/', element: Home },
@@ -34,6 +38,8 @@ const routes = [
   { path: '/news-form', element: AddNews },
   { path: '/certificate-form', element: CertificateForm },
   { path: '/certificate-view', element: CertificateView },
+  { path: '/get-certificate', element: GetCertificatesForm },
+  { path: '/join-us', element: JoinUs },
   { path: '*', element: () => <h1>404 Not Found</h1> },  
 ];
 
