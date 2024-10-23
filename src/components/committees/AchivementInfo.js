@@ -41,51 +41,61 @@ const achievementsInfo = {
       title: "One Stop Project",
       description:
         "Led by LCs under EMSA Ethiopia, this initiative supported sexual assault survivors at the 'One Stop' center in Gandhi Memorial Hospital. Essential items such as sanitary pads, menstrual cups, clothing, soaps, detergents, and learning materials were donated. Fundraising events and collaborations with organizations and medical staff helped achieve donation goals. The project ran from April 22, 2023, to June 3, 2023, under the guidance of Dr. Ismael Aminu.",
+      imageSrc: "emsa-achievement1.png",
     },
     {
       title: "Pillars of SRHR Forum",
       description:
         "Organized by SCORA Ethiopia in collaboration with EngenderHealth, this forum focused on sexual and reproductive health rights (SRHR) in Ethiopia. It identified gaps in healthcare access and facilitated discussions among 160 participants, primarily medical students, enhancing awareness and collaboration on SRHR initiatives.",
+      imageSrc: "emsa-achievement2.png",
     },
     {
       title: "16 Days of Activism Against GBV",
       description:
         "On December 2, 2023, a panel discussion on 'Interpersonal Relationships for Young Medical Professionals' emphasized the importance of consent and healthy relationships. Supported by EngenderHealth, the event encouraged medical students to reflect on building healthy relationships to combat GBV.",
+      imageSrc: "emsa-achievement3.png",
     },
     {
       title: "Project Enes Le Wegene",
       description:
         "Enrolled under IFMSA's program for HIV, AIDS, and STI, this project was organized by SCORA-HMC in collaboration with SCORA-MMC, SCORA-ECUSTA, and Zewditu Memorial Hospital. The initiative provided HIV counseling and testing for marginalized communities. In Phase 1, 20 members of the Ethiopian National Association of the Blind received voluntary testing. Phase 2 expanded to Wereda 7, engaging underprivileged women in health discussions through an Ethiopian Coffee Ceremony. Both phases were supported by Zewditu Memorial Hospital, offering follow-up care for those in need.",
+      imageSrc: "emsa-achievement4.png",
     },
     {
       title: "Breast Cancer Awareness Campaign",
       description:
         "Conducted by SCORA-MMC from October 26-28, 2023, this campaign involved distributing brochures to 400 patients at OPDs and promoting the 'Dear Mama' breast self-examination app. The event highlighted the power of partnerships in advocating for better health outcomes.",
+      imageSrc: "emsa-achievement5.png",
     },
     {
       title: "SCORA-AA Blood Donation Drive",
       description:
         "In collaboration with Wings of Healing, SCORA-AA organized a blood donation drive for Cervical Cancer Awareness Month, significantly contributing to the fight against cervical cancer through community engagement.",
+      imageSrc: "emsa-achievement6.png",
     },
     {
-      title: "Mereja Breastfeeding Digital Manual",
+      title: "Menstrual Hygiene Education at Born Again Rehabilitation Center",
       description:
-        "SCORA-ECUSTA released the 'Mereja Breastfeeding Digital Manual' in Amharic and Afaan Oromo, providing mothers with essential breastfeeding information. This manual was distributed at Gandhi Memorial Hospital, reaching many families and promoting maternal and child health.",
+        "SCORA-HMC completed the 'እሷነትዋን ለእሷ' project by visiting the Born Again Mental Rehabilitation and Health Center, distributing menstrual hygiene products and conducting educational sessions on personal hygiene and menstrual health.",
+      imageSrc: "emsa-achievement7.png",
     },
     {
       title: "SRHR Training for Deaf Students",
       description:
         "SCORA-AA conducted an SRHR training program for students at Mekanisa Deaf School, covering topics such as HIV/AIDS, contraception, menstrual health, and safe abortion. The program empowered students with crucial knowledge for informed reproductive health choices.",
+      imageSrc: "emsa-achievement8.png",
     },
     {
       title: "Safe Abortion Dialogue and Movie Night",
       description:
         "SCORA-AA hosted a dialogue session and movie night focused on safe abortion and reproductive rights. Participants engaged in discussions, sharing experiences and insights, and promoting awareness of SRHR issues within the community.",
+      imageSrc: "emsa-achievement9.png",
     },
     {
       title: "Cervical Cancer Awareness Campaign",
       description:
         "SCORA-JU organized a successful cervical cancer awareness campaign, distributing over 100 brochures and engaging 50 volunteers. The campaign emphasized collaborative efforts with Jimma University’s gynecology and obstetrics departments to promote early detection and prevention.",
+      imageSrc: "emsa-achievement10.png",
     },
   ],
 };
