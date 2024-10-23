@@ -12,17 +12,40 @@ import {
   Snackbar,
   TextField,
   Typography,
+  MenuItem,
+  Select,
+  FormControl,
+  InputLabel,
 } from "@mui/material";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import { setAuthToken } from "./Utils/AxiosHelper";
 import Cookies from "js-cookie";
+import { useFormik } from "formik";
+import * as yup from "yup";
+
+const validationSchema = yup.object({
+  name: yup
+    .string()
+    .required("Student name is required")
+    .min(2, "Name should be at least 2 characters long")
+    .max(50, "Name should not exceed 50 characters"),
+  type: yup
+    .string()
+    .required("Certificate type is required")
+    .min(5, "Type should be at least 5 characters long")
+    .max(100, "Type should not exceed 100 characters"),
+  body: yup
+    .string()
+    .required("Certificate body is required")
+    .min(10, "Certificate body should be at least 10 characters long")
+    .max(300, "Certificate body should not exceed 300 characters"),
+  issueDate: yup
+    .date()
+    .required("Issue date is required")
+    .max(new Date(), "Issue date cannot be in the future"),
+});
 
 const CertificateForm = () => {
-  const [studentInfo, setStudentInfo] = useState({
-    name: "",
-    department: "",
-    course: "",
-  });
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -30,33 +53,54 @@ const CertificateForm = () => {
   const token = Cookies.get("token");
   const [openSnackbar, setOpenSnackbar] = useState(false);
 
-  const API_BASE_URL = process.env.API_BASE_URL || "http://localhost:5000";
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
-    setSuccess("");
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
 
-    setIsLoading(true);
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      type: "",
+      body: "",
+      issueDate: new Date().toISOString().split("T")[0],
+    },
+    validationSchema: validationSchema,
+    onSubmit: async (values) => {
+      setError("");
+      setSuccess("");
+      setIsLoading(true);
 
-    try {
-      const response = await axios.post(
-        API_BASE_URL + "/api/certificate",
-        studentInfo
-      );
-      setSuccess(`Login successful! Redirecting to certificate-view page...`);
-      setTimeout(
-        () => navigate(`/certificate-view`, { state: response.data }),
-        2000
-      );
-    } catch (error) {
-      console.error("Error submitting student info:", error);
-      setError(
-        error.response?.data?.message || "Error submitting student info"
-      );
-    } finally {
-      setIsLoading(false);
-    }
-  };
+      try {
+        const response = await axios.post(
+          `${API_BASE_URL}/api/certificates`,
+          values,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+            withCredentials: true,
+          }
+        );
+        setSuccess(
+          `Certificate created successfully! Redirecting to certificate-view page...`
+        );
+        setTimeout(
+          () => navigate(`/certificate-view`, { state: values }),
+          2000
+        );
+      } catch (error) {
+        console.error("Error submitting student info:", error);
+        setError(
+          error.response?.data?.message ||
+            error.response?.data?.errors ||
+            error.response?.data?.errors?.map(
+              (error) => error?.msg || error?.message
+            ) ||
+            "Error submitting student info"
+        );
+      } finally {
+        setIsLoading(false);
+      }
+    },
+  });
 
   const handleCloseSnackbar = (event, reason) => {
     if (reason === "clickaway") {
@@ -90,14 +134,14 @@ const CertificateForm = () => {
 
       return () => clearTimeout(timer);
     }
-  }, [token, error, success]);
+  }, [token, error, success, navigate]);
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="sm">
       <CssBaseline />
       <Box
         sx={{
-          marginTop: 8,
+          marginTop: "1rem",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -119,7 +163,12 @@ const CertificateForm = () => {
             {success}
           </Alert>
         )}
-        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+        <Box
+          component="form"
+          noValidate
+          onSubmit={formik.handleSubmit}
+          sx={{ mt: 1 }}
+        >
           <TextField
             margin="normal"
             required
@@ -128,36 +177,61 @@ const CertificateForm = () => {
             label="Student Name"
             id="name"
             type="text"
-            value={studentInfo.name}
-            onChange={(e) =>
-              setStudentInfo({ ...studentInfo, name: e.target.value })
-            }
+            value={formik.values.name}
+            onChange={formik.handleChange}
+            error={formik.touched.name && Boolean(formik.errors.name)}
+            helperText={formik.touched.name && formik.errors.name}
+          />
+          <FormControl fullWidth margin="normal" required>
+            <InputLabel id="type-label">Certificate Type</InputLabel>
+            <Select
+              labelId="type-label"
+              id="type"
+              name="type"
+              value={formik.values.type}
+              label="Certificate Type"
+              onChange={formik.handleChange}
+              error={formik.touched.type && Boolean(formik.errors.type)}
+            >
+              <MenuItem value="Completion">Completion</MenuItem>
+              <MenuItem value="Achievement">Achievement</MenuItem>
+              <MenuItem value="Training">Training</MenuItem>
+              <MenuItem value="Participation">Participation</MenuItem>
+            </Select>
+            {formik.touched.type && formik.errors.type && (
+              <Typography color="error">{formik.errors.type}</Typography>
+            )}
+          </FormControl>
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            name="body"
+            label="Certificate Body"
+            id="body"
+            type="text"
+            multiline
+            rows={4}
+            value={formik.values.body}
+            onChange={formik.handleChange}
+            error={formik.touched.body && Boolean(formik.errors.body)}
+            helperText={formik.touched.body && formik.errors.body}
           />
           <TextField
             margin="normal"
             required
             fullWidth
-            name="department"
-            label="Department"
-            id="department"
-            type="text"
-            value={studentInfo.department}
-            onChange={(e) =>
-              setStudentInfo({ ...studentInfo, department: e.target.value })
-            }
-          />
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            name="course"
-            label="Course"
-            id="course"
-            type="text"
-            value={studentInfo.course}
-            onChange={(e) =>
-              setStudentInfo({ ...studentInfo, course: e.target.value })
-            }
+            name="issueDate"
+            label="Issue Date"
+            id="issueDate"
+            type="date"
+            value={formik.values.issueDate}
+            onChange={formik.handleChange}
+            error={formik.touched.issueDate && Boolean(formik.errors.issueDate)}
+            helperText={formik.touched.issueDate && formik.errors.issueDate}
+            InputLabelProps={{
+              shrink: true,
+            }}
           />
           <Button
             type="submit"
@@ -177,7 +251,7 @@ const CertificateForm = () => {
       <Snackbar
         open={openSnackbar}
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
-        autoHideDuration={3000}
+        autoHideDuration={5000}
         onClose={handleCloseSnackbar}
       >
         <Alert
