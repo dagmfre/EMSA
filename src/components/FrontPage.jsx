@@ -37,6 +37,7 @@ export default function FrontPage() {
             data-aos-once="true"
             data-aos="fade-up"
             data-aos-duration="1600"
+            to="/join-us"
           >
             <Button
               variant="contained"
@@ -51,7 +52,7 @@ export default function FrontPage() {
             </Button>
           </Link>
           <Link
-            to={"/certificate-form"}
+            to={"/get-certificate"}
             data-aos-once="true"
             data-aos="fade-up"
             data-aos-duration="2000"
