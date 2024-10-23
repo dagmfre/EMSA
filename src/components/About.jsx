@@ -28,7 +28,7 @@ export default function About() {
             problems we are facing regarding health care and medical education.
           </li>
         </ul>
-        <Link>
+        <Link to={'/about'}>
           <Button
           data-aos-once="true" data-aos="fade-up"
           data-aos-duration="1000"
