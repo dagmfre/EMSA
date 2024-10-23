@@ -30,10 +30,20 @@ export default function Achievements({ standingCommittee }) {
         ></div>
         {achievementsInfo?.[standingCommittee].map((achievement, index) => (
           <SwiperSlide key={index}>
-            <div className="title" data-swiper-parallax="-300">
+            <p
+              className="title"
+              data-swiper-parallax="-300"
+              style={{ fontWeight: "900" }}
+            >
               {achievement?.title}
-            </div>
+            </p>
             <div className="text" data-swiper-parallax="-100">
+              {achievement?.imageSrc && (
+                <img
+                  src={`/${achievement?.imageSrc}`}
+                  alt={achievement?.imageSrc}
+                />
+              )}
               <p>{achievement?.description}</p>
             </div>
           </SwiperSlide>
