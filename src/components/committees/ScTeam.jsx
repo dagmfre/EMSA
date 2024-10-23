@@ -4,9 +4,11 @@ export default function ScTeam({ standingCommittee }) {
   return (
     <div className="team">
       <div>
-        <h1 data-aos-once="true" data-aos="zoom-in">
-          Meet Our <span>Officials of {standingCommittee}</span>
-        </h1>
+        {standingCommittee !== "Officials" && (
+          <h1 data-aos-once="true" data-aos="zoom-in">
+            Meet Our <span>Officials of {standingCommittee}</span>
+          </h1>
+        )}
         <div className="team-img-cont">
           {teamData?.[standingCommittee]?.map((member, index) => (
             <div
