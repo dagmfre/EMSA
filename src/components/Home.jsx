@@ -15,6 +15,7 @@ import { PhotoCollage } from "./PhotoCollage";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { Alert, Box, Button, Card, CardContent } from "@mui/material";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -25,7 +26,7 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 5000);
   }, []);
 
   useEffect(() => {
@@ -103,22 +104,60 @@ export default function Home() {
             <div className="news-header">
               <h1 style={{ fontSize: "3rem" }}>News & Events</h1>
               <div className="news-form-external-link">
-                <Link to={"/news"} onClick={handleClick}>
-                  {" "}
-                  <h2>Explore All News</h2>
-                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-                </Link>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={handleClick}
+                  startIcon={
+                    <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                  }
+                >
+                  Explore All News
+                </Button>
               </div>
             </div>
-            <div className="news-cards-cont">
-              {news?.data?.slice(0, 3).map((newItem) => (
-                <div>
-                  <PhotoCollage images={newItem.images} />
-                  <h2>{newItem.title}</h2>
-                  <TruncateText text={newItem.body} maxLength={200} />
-                </div>
-              ))}
-            </div>
+            {news?.data?.length > 0 ? (
+              <div className="news-cards-cont">
+                {news.data.slice(0, 3).map((newItem) => (
+                  <div key={newItem.id}>
+                    <PhotoCollage images={newItem.images} />
+                    <h2>{newItem.title}</h2>
+                    <TruncateText text={newItem.body} maxLength={200} />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <Box
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                height="60vh"
+                className="no-news-found"
+                sx={{
+                  width: "100%",
+                  maxWidth: "initial",
+                  height: "initial",
+                  justifyContent: "left",
+                }}
+              >
+                <Card
+                  elevation={3}
+                  style={{
+                    textAlign: "center",
+                    backgroundColor: "#f5f5f5",
+                    maxWidth: "320px",
+                    width: "100%",
+                    padding: 0,
+                  }}
+                >
+                  <CardContent sx={{ paddingBottom: "0 !important" }}>
+                    <Alert severity="error" style={{ marginBottom: "16px" }}>
+                      No News & Events found.
+                    </Alert>
+                  </CardContent>
+                </Card>
+              </Box>
+            )}
           </div>
           <Testimonials />
           <Contacts />
