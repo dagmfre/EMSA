@@ -35,7 +35,8 @@ html {
 }
 
 .our-story-cont .navigation,
-.local-chapters .navigation {
+.local-chapters .navigation,
+.join-us-cont .navigation {
   margin: 0 -5rem !important;
   div {
     max-width: 1150px;
@@ -47,11 +48,6 @@ html {
     margin: 0;
     max-width: inherit;
   }
-}
-
-.our-story-cont .footer {
-  margin: 0 -5rem -5rem;
-  width: inherit;
 }
 
 .navigation {
@@ -168,7 +164,7 @@ html {
   text-align: center;
   scale: 0;
   top: 0%;
-  right: -130px;
+  right: -40px;
   transition: 1s;
   transform-origin: top;
   display: flex;
@@ -221,7 +217,7 @@ html {
 .navigation-link:link,
 .navigation-link:visited {
   display: inline-block;
-  font-size: 30px;
+  font-size: 1.5rem;
   font-weight: 300;
   color: #fff;
   text-decoration: none;
@@ -626,7 +622,7 @@ html {
   max-width: initial;
   padding: 5rem 2rem 10rem;
   background-image: url(grid_background.svg);
-  div {
+  > :nth-child(1) {
     max-width: 1280px;
     margin: auto;
   }
@@ -697,7 +693,7 @@ html {
 }
 
 .team p {
-  margin: 1rem 0 4rem;
+  margin: 1rem 0 0;
   font-size: 1.5rem;
   text-align: center;
 }
@@ -825,24 +821,7 @@ html {
   justify-content: center;
   text-decoration: none;
   color: inherit;
-}
-
-.trainers-pool-link h2:hover ~ svg,
-.news-form-external-link h2:hover ~ svg {
-  color: #3765aa;
-  bottom: 5px;
-}
-
-.trainers-pool-link svg:hover ~ .trainers-pool-link h1::before,
-.news-form-external-link svg:hover ~ .news-form-external-link h1::before {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-.trainers-pool-link svg:hover,
-.news-form-external-link svg:hover {
-  color: #3765aa;
-  bottom: 5px;
+  margin: 0;
 }
 
 .contact {
@@ -935,12 +914,7 @@ html {
   border-bottom: 3px solid black;
 }
 
-.home .footer {
-  margin: 15rem -5rem -5rem;
-  width: inherit;
-}
-
-.footer {
+.footer-child-cont {
   max-width: initial;
   display: grid;
   position: relative;
@@ -961,7 +935,7 @@ html {
   max-width: 300px;
 }
 .footer-childs:nth-child(4) {
-  max-width: 360px;
+  max-width: 250px;
 }
 .info-cont i,
 .info-cont svg {
@@ -1042,32 +1016,31 @@ html {
 
 .social-cont {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
+  a:hover:before {
+    display: none;
+  }
 }
+
 .social-cont svg {
   cursor: pointer;
   font-size: 1.5rem;
   transition: 0.2s;
-  margin-top: 5px;
+  margin-bottom: 0;
 }
-.social-cont svg:nth-child(1):hover {
+.social-cont a:nth-child(1) svg:hover {
   color: #3583ba;
 }
-.social-cont svg:nth-child(2):hover {
+.social-cont a:nth-child(2) svg:hover {
   color: #22bdd2;
 }
-.social-cont svg:nth-child(3):hover {
+.social-cont a:nth-child(3) svg:hover {
   color: #2f7c98;
 }
-.social-cont svg:nth-child(4):hover {
-  color: #c30000;
+.social-cont a:nth-child(4) svg:hover {
+  color: #0077b5;
 }
-.copy {
-  position: absolute;
-  bottom: 0;
-  justify-self: center;
-  margin: 0;
-}
+
 .confirm-cont {
   margin-top: 1rem;
   display: flex;
@@ -1895,6 +1868,16 @@ html {
   max-width: 850px;
   line-height: 1.3;
   text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  img {
+    max-width: 400px;
+    width: 100%;
+    border-radius: 5px;
+    position: initial;
+    inset: initial;
+  }
 }
 .swiper-pagination {
   background-color: rgb(53, 45, 45);
@@ -1926,7 +1909,8 @@ html {
   margin: 0;
 }
 
-.sc-officials-team-cont .profile > :nth-child(2) {
+.sc-officials-team-cont .profile > :nth-child(2),
+.team .profile > :nth-child(2) {
   display: flex;
   gap: 1.5rem;
   margin: 0;
@@ -1955,20 +1939,18 @@ html {
     margin-top: 10px;
   }
 }
-.home .news-header {
-  justify-content: space-between;
-}
+
 .news-header {
+  justify-content: space-between;
   display: flex;
   align-items: center;
-  justify-content: center;
   width: 100%;
 }
 .news-cards-cont {
   display: grid;
   grid-template: auto / 1fr 1fr 1fr;
   gap: 1rem;
-  > *:not(.news-form-external-link) {
+  > *:not(.news-form-external-link):not(.no-news-found) {
     margin-bottom: 2rem;
     max-height: max-content;
     border-bottom: #000000 4px solid;
@@ -2248,6 +2230,58 @@ html {
   }
 }
 
+.certificate-bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.certificate-bottom-cont {
+  align-self: center;
+  img {
+    max-width: 150px;
+    border-bottom: 1px solid #00000094;
+    padding-bottom: 10px;
+  }
+}
+
+.MuiGrid-item .MuiPaper-root {
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2) !important;
+}
+
+.MuiGrid-item .MuiPaper-root:hover {
+  box-shadow: 2px 2px 7px rgba(5, 4, 4, 0.5) !important;
+}
+
+.join-us-cont .footer,
+.our-story-cont .footer {
+  margin: 0 -5rem -5rem;
+  width: inherit;
+}
+
+.home .footer {
+  margin: 15rem -5rem -100px;
+  width: inherit;
+}
+
+.footer {
+  width: initial;
+  max-width: initial;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-bottom {
+  padding: 0 5rem 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  p {
+    margin: 0;
+  }
+}
+
 @media screen and (max-width: 1350px) {
   .partners-logo-cont {
     display: grid;
@@ -2318,7 +2352,7 @@ html {
 
       @media screen and (max-width: 1150px) {
         .news-cards-cont {
-          column-count: 2;
+          grid-template: auto / 1fr 1fr;
         }
         @media screen and (max-width: 1100px) {
           .team-img-cont {
@@ -2456,7 +2490,7 @@ html {
             }
             .navigation-link:link,
             .navigation-link:visited {
-              font-size: 1.4rem;
+              font-size: 1.2rem;
             }
             @media screen and (max-width: 1160px) {
               .front-descr-cont h1 {
@@ -2482,7 +2516,7 @@ html {
                 .front-img-cont {
                   padding-right: 0;
                 }
-                .footer {
+                .footer-child-cont {
                   grid-template: repeat(2, 1fr) / repeat(2, 1fr);
                   padding-bottom: 4rem;
                 }
@@ -2541,6 +2575,13 @@ html {
                       padding: 40px;
                     }
                     @media screen and (max-width: 800px) {
+                      .committee-achievements .swiper-slide {
+                        padding: 40px 50px;
+                        text-align: center;
+                      }
+                      .swiper-slide .text {
+                        flex-direction: column;
+                      }
                       .committee-history {
                         flex-direction: column;
                         gap: 2rem;
@@ -2561,12 +2602,15 @@ html {
                         }
                       }
                       .news-cards-cont {
-                        column-count: 1;
+                        grid-template: auto / 1fr;
                       }
                       .news-header h1 {
                         font-size: 2rem !important;
                       }
                       @media screen and (max-width: 720px) {
+                        .join-us-cont {
+                          padding: 7rem 2rem 5rem !important;
+                        }
                         .scome .committee-achievements {
                           padding: 0 2rem 2rem;
                         }
@@ -2582,7 +2626,7 @@ html {
                         .home .navigation {
                           margin: 0 -2rem !important;
                         }
-                        .home .footer {
+                        .footer {
                           margin: 15rem -2rem -2rem;
                         }
                         .the-committee .navigation,
@@ -2590,11 +2634,14 @@ html {
                         .trainers .navigation {
                           margin: 0 0rem !important;
                         }
-                        .our-story-cont .footer {
+                        .our-story-cont .footer-child-cont {
                           margin: 0 -2rem -2rem;
                           width: inherit;
                         }
                         .our-story-cont .navigation {
+                          margin: 0 -2rem !important;
+                        }
+                        .join-us-cont .navigation {
                           margin: 0 -2rem !important;
                         }
                         .home {
@@ -2679,7 +2726,7 @@ html {
                           bottom: 0;
                           width: 25%;
                         }
-                        .footer {
+                        .footer-child-cont {
                           grid-template: repeat(4, auto) / repeat(1, 1fr);
                           text-align: center;
                           align-items: center;
@@ -2806,7 +2853,7 @@ html {
                                 .interceptor {
                                   display: none;
                                 }
-                                .footer {
+                                .footer-child-cont {
                                   padding: 4rem 1rem;
                                 }
                                 .mission-main h1 {
@@ -2823,7 +2870,7 @@ html {
                                 }
                                 .navigation-link:link,
                                 .navigation-link:visited {
-                                  font-size: 1.1rem;
+                                  font-size: 1rem;
                                 }
                               }
                             }
