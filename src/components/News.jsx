@@ -7,6 +7,14 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import {
+  Box,
+  Typography,
+  Button,
+  Card,
+  CardContent,
+  Alert,
+} from "@mui/material";
 
 export default function News({ auth }) {
   const [news, setNews] = useState([]);
@@ -85,25 +93,60 @@ export default function News({ auth }) {
       <div className="news">
         <div className="news-header">
           <h1>News & Events</h1>
+          {isAdmin && (
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleClick}
+              startIcon={<FontAwesomeIcon icon={faArrowUpRightFromSquare} />}
+            >
+              Add News & Events
+            </Button>
+          )}
         </div>
-        <div className="news-cards-cont">
-          {news?.data?.map((newItem) => (
-            <div>
-              <PhotoCollage images={newItem.images} />
-              <h2>{newItem.title}</h2>
-              <TruncateText text={newItem.body} maxLength={200} />
-            </div>
-          ))}
-          <div
-            style={{ display: `${isAdmin ? "flex" : "none"}` }}
-            className="news-form-external-link"
-          >
-            <Link onClick={handleClick}>
-              <h2>Add News & Events</h2>
-              <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-            </Link>
+
+        {news?.data?.length > 0 ? (
+          <div className="news-cards-cont">
+            {news.data.map((newItem) => (
+              <div key={newItem.id}>
+                <PhotoCollage images={newItem.images} />
+                <h2>{newItem.title}</h2>
+                <TruncateText text={newItem.body} maxLength={200} />
+              </div>
+            ))}
           </div>
-        </div>
+        ) : (
+          <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            height="60vh"
+            className="no-news-found"
+            sx={{
+              width: "100%",
+              maxWidth: "initial",
+              height: "initial",
+              justifyContent: "left",
+            }}
+          >
+            <Card
+              elevation={3}
+              style={{
+                textAlign: "center",
+                backgroundColor: "#f5f5f5",
+                maxWidth: "320px",
+                width: "100%",
+                padding: 0,
+              }}
+            >
+              <CardContent sx={{ paddingBottom: "0 !important" }}>
+                <Alert severity="error" style={{ marginBottom: "16px" }}>
+                  No News & Events found.
+                </Alert>
+              </CardContent>
+            </Card>
+          </Box>
+        )}
       </div>
       <Footer />
     </>
